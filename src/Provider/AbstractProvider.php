@@ -1,6 +1,6 @@
 <?php
 
-namespace Probe\Provider;
+namespace YiiStarterKit\Probe\Provider;
 
 /**
  * @author Eugene Terentev <eugene@terentev.net>
@@ -99,7 +99,7 @@ abstract class AbstractProvider implements ProviderInterface
      */
     public function isISS()
     {
-        return strpos(strtolower($this->getServerSoftware()), 'microsoft-iis') !== false;
+        return str_contains(strtolower((string) $this->getServerSoftware()), 'microsoft-iis');
     }
 
     /**
@@ -107,7 +107,7 @@ abstract class AbstractProvider implements ProviderInterface
      */
     public function isNginx()
     {
-        return strpos(strtolower($this->getServerSoftware()), 'nginx') !== false;
+        return str_contains(strtolower((string) $this->getServerSoftware()), 'nginx');
     }
 
     /**
@@ -115,7 +115,7 @@ abstract class AbstractProvider implements ProviderInterface
      */
     public function isApache()
     {
-        return strpos(strtolower($this->getServerSoftware()), 'apache') !== false;
+        return str_contains(strtolower((string) $this->getServerSoftware()), 'apache');
     }
 
     /**
@@ -158,7 +158,7 @@ abstract class AbstractProvider implements ProviderInterface
      * @param int $count
      * @return array
      */
-    public function getPing(array $hosts = null, $count = 2)
+    public function getPing(?array $hosts = null, $count = 2)
     {
         if (!$hosts) {
             $hosts = array('gnu.org', 'github.com', 'wikipedia.org');
@@ -197,11 +197,7 @@ abstract class AbstractProvider implements ProviderInterface
      */
     public function getDbVersion(\PDO $connection)
     {
-        if (is_a($connection, 'PDO')) {
-            return $connection->getAttribute(\PDO::ATTR_SERVER_VERSION);
-        } else {
-            return mysqli_get_server_info($connection);
-        }
+        return $connection->getAttribute(\PDO::ATTR_SERVER_VERSION);
     }
 
     /**
@@ -211,7 +207,7 @@ abstract class AbstractProvider implements ProviderInterface
      */
     public function getServerVariable($key)
     {
-        return isset($_SERVER[$key]) ? $_SERVER[$key] : null;
+        return $_SERVER[$key] ?? null;
     }
 
     /**

@@ -1,18 +1,17 @@
 <?php
-namespace probe\Tests;
+namespace YiiStarterKit\Probe\Tests;
 
-use PHPUnit_Framework_TestCase;
-use Probe\ProviderFactory;
+use YiiStarterKit\Probe\ProviderFactory;
 
-class ProviderFactoryTest extends PHPUnit_Framework_TestCase
+class ProviderFactoryTest extends \PHPUnit\Framework\TestCase
 {
     public function testGetOsType()
     {
-        $this->assertInternalType('string', ProviderFactory::getOsType());
+        $this->assertIsString(ProviderFactory::getOsType());
     }
 
     public function testGetProvider()
     {
-        $this->assertInstanceOf('\Probe\Provider\AbstractProvider', ProviderFactory::create());
+        $this->assertInstanceOf('\YiiStarterKit\Probe\Provider\AbstractProvider', ProviderFactory::create());
     }
 }

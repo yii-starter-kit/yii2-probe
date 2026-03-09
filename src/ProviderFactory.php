@@ -1,6 +1,6 @@
 <?php
 
-namespace Probe;
+namespace YiiStarterKit\Probe;
 
 /**
  * Provider Factory
@@ -18,14 +18,14 @@ class ProviderFactory
      * @var array
      */
     public static $providers = [
-        'Linux' => '\Probe\Provider\LinuxProvider',
-        'Mac' => '\Probe\Provider\MacProvider',
-        'Windows' => '\Probe\Provider\WindowsProvider',
+        'Linux' => '\YiiStarterKit\Probe\Provider\LinuxProvider',
+        'Mac' => '\YiiStarterKit\Probe\Provider\MacProvider',
+        'Windows' => '\YiiStarterKit\Probe\Provider\WindowsProvider',
     ];
 
     /**
      * @param array $config
-     * @return null|Provider\AbstractProvider
+     * @return null|\YiiStarterKit\Probe\Provider\AbstractProvider
      */
     public static function create($config = [])
     {

@@ -1,20 +1,27 @@
 {
-    "name": "trntv/probe",
+    "name": "yii-starter-kit/yii2-probe",
     "description": "System information provider",
     "license": "MIT",
     "authors": [
         {
             "name": "Eugene Terentev",
             "email": "eugene@terentev.net"
+        },
+        {
+            "name": "Victor Gonzalez",
+            "email": "victor@vgr.cl"
         }
     ],
+    "require": {
+        "php": "^8.4"
+    },
     "require-dev": {
-        "phpunit/phpunit": "^5.0"
+        "phpunit/phpunit": "^11.0"
     },
     "autoload": {
-        "psr-4": { "Probe\\": "src/" }
+        "psr-4": { "YiiStarterKit\\Probe\\": "src/" }
     },
     "autoload-dev": {
-        "psr-4": { "Probe\\Tests\\": "tests/" }
+        "psr-4": { "YiiStarterKit\\Probe\\Tests\\": "tests/" }
     }
 }

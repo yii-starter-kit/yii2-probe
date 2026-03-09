@@ -1,6 +1,6 @@
 <?php
 
-namespace Probe\Provider;
+namespace YiiStarterKit\Probe\Provider;
 
 /**
  * Linux information provider
