@@ -177,7 +177,7 @@ class LinuxProvider extends AbstractUnixProvider
         $cu = $this->getCpuinfoByLsCpu();
         return array_key_exists('CPU(s)', $cu) ? $cu['CPU(s)'] : null;
     }
-    
+
     /**
      * @return mixed|null
      */
